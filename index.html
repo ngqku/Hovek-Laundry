@@ -1,0 +1,1270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hovek Laundry | Professional Laundry & Dry Cleaning Delivered</title>
+    <meta name="description" content="Modern, eco-friendly laundry and dry cleaning services with free doorstep pickup & delivery. 24-hour turnaround, wash & fold, and suit pressing." />
+    <meta property="og:title" content="Hovek Laundry | Professional Laundry & Dry Cleaning" />
+    <meta property="og:description" content="Schedule your doorstep laundry and dry cleaning pickup in under 60 seconds." />
+    <meta property="og:type" content="website" />
+    
+    <!-- Global CSS Stylesheet -->
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+    <!-- Persistent Sticky Header / Navbar -->
+    <header class="site-header" id="site-header">
+      <div class="container header-container">
+        <!-- Logo -->
+        <a href="#home" class="brand-logo" id="brand-logo-link" aria-label="HovekLaundry Home">
+          <div class="logo-icon-wrapper">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="3" ry="3"/>
+              <circle cx="12" cy="13" r="5"/>
+              <circle cx="12" cy="13" r="2"/>
+              <line x1="7" y1="7" x2="7.01" y2="7"/>
+              <line x1="10" y1="7" x2="10.01" y2="7"/>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">Hovek<span>Laundry</span></span>
+            <span class="brand-tagline">Laundry & Dry Cleaning</span>
+          </div>
+        </a>
+
+        <!-- Main Navigation Links (SPA Router) -->
+        <nav class="main-nav" id="main-navigation" aria-label="Primary Navigation">
+          <ul class="nav-links">
+            <li><a href="#home" class="nav-link active" id="nav-link-home">Home</a></li>
+            <li><a href="#how-it-works" class="nav-link" id="nav-link-how">How It Works</a></li>
+            <li><a href="#about-us" class="nav-link" id="nav-link-about">About Us</a></li>
+          </ul>
+        </nav>
+
+        <!-- Social Links & Action CTA -->
+        <div class="header-actions">
+          <div class="social-links" aria-label="Social media links">
+            <!-- Facebook -->
+            <a href="https://facebook.com/HOVEKLaundryServices" target="_blank" rel="noopener noreferrer" class="social-icon-btn" id="social-fb-header" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://instagram.com/hoveklaundry" target="_blank" rel="noopener noreferrer" class="social-icon-btn" id="social-ig-header" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+            <!-- TikTok -->
+            <a href="https://tiktok.com/@HovekLaundry" target="_blank" rel="noopener noreferrer" class="social-icon-btn" id="social-tiktok-header" aria-label="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+              </svg>
+            </a>
+          </div>
+
+          <a href="#home" class="header-cta-btn" id="header-cta-book">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            Book Pickup
+          </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div class="mobile-drawer" id="mobile-drawer">
+        <ul class="mobile-nav-links">
+          <li><a href="#home" class="mobile-nav-link active" id="mob-nav-home">Home <span>→</span></a></li>
+          <li><a href="#how-it-works" class="mobile-nav-link" id="mob-nav-how">How It Works <span>→</span></a></li>
+          <li><a href="#about-us" class="mobile-nav-link" id="mob-nav-about">About Us <span>→</span></a></li>
+        </ul>
+        <div class="mobile-drawer-footer">
+          <div class="social-links">
+            <a href="https://facebook.com/HOVEKLaundryServices" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://instagram.com/hoveklaundry" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://tiktok.com/@HovekLaundry" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+            </a>
+          </div>
+          <a href="tel:+254752275716" style="font-size:0.9rem; font-weight:700; color:var(--primary-blue); text-align:center;">
+            📞 Call Us: +254 752275716
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- SPA Main View Container -->
+    <main id="view-container">
+
+      <!-- VIEW 1: HOME SCREEN (#home) -->
+      <section class="spa-view active-view" id="view-home">
+        
+        <!-- Hero Section & Primary Lead Form -->
+        <section class="hero-section" id="hero-banner">
+          <div class="hero-pattern"></div>
+          <div class="container hero-grid">
+            
+            <!-- Left Hero Pitch -->
+            <div class="hero-content">
+              <div class="hero-pill">
+                <span class="hero-pill-pulse"></span>
+                Same-Day & 24-Hour Express Service Available
+              </div>
+              <h1 class="hero-title">
+                Professional Laundry & <span>Dry Cleaning</span> Delivered to Your Doorstep
+              </h1>
+              <p class="hero-subtitle">
+                Reclaim 4+ hours every week. We pick up, expertly wash, stain-treat, press, and deliver your garments crisp and fresh — all with 100% eco-friendly detergents.
+              </p>
+              
+              <!-- Value Highlights -->
+              <div class="hero-features-list">
+                <div class="hero-feature-item">
+                  <span class="hero-feature-icon">✓</span>
+                  <span>Free Doorstep Pickup & Delivery</span>
+                </div>
+                <div class="hero-feature-item">
+                  <span class="hero-feature-icon">✓</span>
+                  <span>100% Hypoallergenic Eco-Wash</span>
+                </div>
+                <div class="hero-feature-item">
+                  <span class="hero-feature-icon">✓</span>
+                  <span>24-Hour Fast Turnaround</span>
+                </div>
+                <div class="hero-feature-item">
+                  <span class="hero-feature-icon">✓</span>
+                  <span>Fabric Safety Guarantee</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Hero Lead Capture Card (Primary Lead Form) -->
+            <div class="lead-form-card" id="lead-form-card">
+              <div class="form-header">
+                <h2 class="form-title">Schedule a Pickup</h2>
+                <p class="form-subtitle">Fill in your details below and we will reach you as soon as possible</p>
+              </div>
+
+              <form class="lead-form" id="primary-lead-form" novalidate>
+                <!-- Name -->
+                <div class="form-group">
+                  <label class="form-label" for="primary-name">
+                    Full Name <span style="color:var(--error)">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="primary-name"
+                    name="name"
+                    class="form-input"
+                    placeholder="e.g. Hovek Laundry"
+                    required
+                    autocomplete="name"
+                  />
+                  <span class="form-error-msg" id="primary-name-error">Please enter your full name.</span>
+                </div>
+
+                <!-- Phone & Email Row -->
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="primary-phone">
+                      Phone Number <span style="color:var(--error)">*</span>
+                    </label>
+                    <input
+                      type="tel"
+                      id="primary-phone"
+                      name="phone"
+                      class="form-input"
+                      placeholder="(254) 700-000-000"
+                      required
+                      autocomplete="tel"
+                    />
+                    <span class="form-error-msg" id="primary-phone-error">Valid phone required.</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="primary-email">
+                      Email Address <span style="color:var(--error)">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="primary-email"
+                      name="email"
+                      class="form-input"
+                      placeholder="hovek@example.com"
+                      autocomplete="email"
+                    />
+                    <span class="form-error-msg" id="primary-email-error">Valid email required.</span>
+                  </div>
+                </div>
+
+                <!-- Service Needed Dropdown -->
+                <div class="form-group">
+                  <label class="form-label" for="primary-service-select">
+                    Service Needed <span style="color:var(--error)">*</span>
+                  </label>
+                  <select id="primary-service-select" name="service" class="form-select" required>
+                    <option value="" disabled selected>Select a laundry service...</option>
+                    <option value="wash-and-fold">Light clothes 70KES per kg</option>
+                    <option value="dry-cleaning">Basket 700KES</option>
+                    <option value="ironing-pressing">Duvets (500KES max)</option>
+                    <option value="bedding-comforters">Shoes 100KES</option>
+                    <option value="bulk-commercial">Business, Organizations etc</option>
+                  </select>
+                  <span class="form-error-msg" id="primary-service-select-error">Please choose a service.</span>
+                </div>
+
+                <!-- Special Notes / Preferred Slot -->
+                <div class="form-group">
+                  <label class="form-label" for="primary-notes">
+                    Pickup Instructions / Address Note (Optional)
+                  </label>
+                  <textarea
+                    id="primary-notes"
+                    name="notes"
+                    rows="2"
+                    class="form-textarea"
+                    placeholder="e.g. Leave bag at front porch, pickup Tuesday 9 AM"
+                  ></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-submit" id="btn-submit-primary">
+                  <span class="spinner" style="display:none;" aria-hidden="true"></span>
+                  <span class="btn-text">Submit details</span>
+                </button>
+
+                <p class="form-privacy-note">
+                  🔒 We respect your privacy. No spam. Data saved securely.
+                </p>
+              </form>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Services Offered Section -->
+        <section class="section section-white" id="services-section">
+          <div class="container">
+            <div class="section-header">
+              <span class="section-badge">Garment Care Specialist</span>
+              <h2 class="section-title">Our Professional Laundry Services</h2>
+              <p class="section-description">
+                From daily wardrobe essentials to delicate garments, our team treats every fiber with unmatched care.
+              </p>
+            </div>
+
+            <div class="services-grid">
+
+              <!-- Service 1: Wash, Dry & Fold -->
+              <div class="service-card" id="service-card-wash">
+                <div class="service-icon-box">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                    <line x1="12" y1="22.08" x2="12" y2="12"/>
+                  </svg>
+                </div>
+                <h3 class="service-title">Wash, Dry & Fold</h3>
+                <p class="service-desc">
+                  Complete care for your garments. We follow your instructions to make sure clothes are washed just as you like them.
+                </p>
+                <div class="service-features">
+                  <div class="service-feature-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Weighed and sorted by color and fabric type
+                  </div>
+                  <div class="service-feature-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Deep cleaned using quality soaps and treated with softeners
+                  </div>
+                  <div class="service-feature-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Sun-dried and neatly folded ready for your closet
+                  </div>
+                </div>
+                <div class="service-card-footer">
+                  <button class="service-select-btn" data-service="wash-and-fold">Select Service</button>
+                </div>
+              </div>
+
+              <!-- Service 2: Steam Press & Ironing -->
+              <div class="service-card" id="service-card-iron">
+                <div class="service-icon-box">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                    <polyline points="2 17 12 22 22 17"/>
+                    <polyline points="2 12 12 17 22 12"/>
+                  </svg>
+                </div>
+                <h3 class="service-title">Steam Press & Ironing</h3>
+                <p class="service-desc">
+                  Keep your clothes looking crisp, smooth, and wrinkle-free upon request.
+                </p>
+                <div class="service-features">
+                  <div class="service-feature-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Professional steam pressing for shirts, suits, and dresses
+                  </div>
+                  <div class="service-feature-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Removes tough wrinkles while protecting delicate fabrics
+                  </div>
+                  <div class="service-feature-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Delivered clean and neatly folded or on hangers
+                  </div>
+                </div>
+                <div class="service-card-footer">
+                  <button class="service-select-btn" data-service="steam-press">Select Service</button>
+                </div>
+              </div>
+
+              <!-- Service 3: Duvets & Bedding -->
+              <div class="service-card" id="service-card-bedding">
+                <div class="service-icon-box">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M2 4v16"/>
+                    <path d="M2 8h18a2 2 0 0 1 2 2v10"/>
+                    <path d="M2 17h20"/>
+                    <path d="M6 8v9"/>
+                  </svg>
+                </div>
+                <h3 class="service-title">Duvets & Bedding Cleaning</h3>
+                <p class="service-desc">
+                  Deep cleaning for heavy bedding so you can enjoy a fresh, hygienic sleep.
+                </p>
+                <div class="service-features">
+                  <div class="service-feature-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Thorough washing for duvets, comforters, and blankets
+                  </div>
+                  <div class="service-feature-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Kills dust mites, allergens, and odors
+                  </div>
+                  <div class="service-feature-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Returned soft, fresh, and completely dry
+                  </div>
+                </div>
+                <div class="service-card-footer">
+                  <button class="service-select-btn" data-service="bedding">Select Service</button>
+                </div>
+              </div>
+
+              <!-- Service 4: Shoe Cleaning -->
+              <div class="service-card" id="service-card-shoes">
+                <div class="service-icon-box">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                  </svg>
+                </div>
+                <h3 class="service-title">Detoxification and Disinfection</h3>
+                <p class="service-desc">
+                  Neutralizing and removing toxic residues and disinfection in killing dirt-mites and germs for any garment
+                </p>
+                <div class="service-features">
+                  <div class="service-feature-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Deep soak fabric detox
+                  </div>
+                  <div class="service-feature-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Laundry stripping to extract embedded films and body oils
+                  </div>
+                  <div class="service-feature-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    ozone laundry injection to destroy bacteira and viruses instantly
+                  </div>
+                </div>
+                <div class="service-card-footer">
+                  <button class="service-select-btn" data-service="shoes">Select Service</button>
+                </div>
+              </div>
+
+              <!-- Service 5: Mats & Curtains -->
+              <div class="service-card" id="service-card-mats">
+                <div class="service-icon-box">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                  </svg>
+                </div>
+                <h3 class="service-title">Mats & Curtains</h3>
+                <p class="service-desc">
+                  Specialized cleaning for heavy household fabrics to keep your home fresh.
+                </p>
+                <div class="service-features">
+                  <div class="service-feature-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Deep dust and dirt extraction for heavy curtains and drapes
+                  </div>
+                  <div class="service-feature-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Thorough washing and drying for door and floor mats
+                  </div>
+                  <div class="service-feature-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Preserves fabric quality and original colors
+                  </div>
+                </div>
+                <div class="service-card-footer">
+                  <button class="service-select-btn" data-service="mats-curtains">Select Service</button>
+                </div>
+              </div>
+
+              <!-- Service 6: Free Pickup & Delivery -->
+              <div class="service-card" id="service-card-delivery">
+                <div class="service-icon-box">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                </div>
+                <h3 class="service-title">Free Pickup & Delivery</h3>
+                <p class="service-desc">
+                  Convenient doorstep service so you never have to worry about running errands.
+                </p>
+                <div class="service-features">
+                  <div class="service-feature-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Zero extra cost—enjoy free pickups and deliveries
+                  </div>
+                  <div class="service-feature-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Available daily from 6:00 AM to 7:00 PM
+                  </div>
+                  <div class="service-feature-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Fast turnarounds scheduled right at your convenience
+                  </div>
+                </div>
+                <div class="service-card-footer">
+                  <button class="service-select-btn" data-service="pickup-delivery">Select Service</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Pricing Section (KPI Dashboard Cards & Interactive Estimator) -->
+        <section class="section section-tint" id="pricing-section">
+          <div class="container">
+            <div class="section-header">
+              <span class="section-badge">Transparent Rates</span>
+              <h2 class="section-title">Most affordable rates in town</h2>
+              <p class="section-description">
+                No hidden fees or unexpected surcharges. Free doorstep pickup and delivery for all orders
+              </p>
+            </div>
+
+            <!-- KPI Cards Grid -->
+            <div class="pricing-kpi-grid">
+              
+              <!-- KPI 1 -->
+              <div class="kpi-card" id="kpi-tier-wash">
+                <div class="kpi-header">
+                  <h3 class="kpi-tier-name">Basket</h3>
+                  <p class="kpi-tier-sub">Constant charge for one laundry basket</p>
+                </div>
+                <div class="kpi-price-display">
+                  <span class="kpi-currency">KES</span>
+                  <span class="kpi-amount">700</span>
+                  <span class="kpi-unit">/ baskets</span>
+                </div>
+                <div class="kpi-benefits">
+                  <div class="kpi-benefit-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    One standard laundry basket
+                  </div>
+                  <div class="kpi-benefit-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Normal clothes only
+                  </div>
+                  <div class="kpi-benefit-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Best price in town
+                  </div>
+                </div>
+                <a href="#home" class="kpi-cta-btn btn-outline">Choose Basket</a>
+              </div>
+
+              <!-- KPI 2 (Featured) -->
+              <div class="kpi-card featured" id="kpi-tier-dry">
+                <span class="kpi-badge-pill">Most Popular</span>
+                <div class="kpi-header">
+                  <h3 class="kpi-tier-name">Light clothes</h3>
+                  <p class="kpi-tier-sub">Trousers, shirts, t-shirts, dresses etc</p>
+                </div>
+                <div class="kpi-price-display">
+                  <span class="kpi-currency">KES</span>
+                  <span class="kpi-amount">70</span>
+                  <span class="kpi-unit">/kg</span>
+                </div>
+                <div class="kpi-benefits">
+                  <div class="kpi-benefit-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Weighed and charged per kg
+                  </div>
+                  <div class="kpi-benefit-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    No minimum weight
+                  </div>
+                  <div class="kpi-benefit-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Unmatched price
+                  </div>
+                </div>
+                <a href="#home" class="kpi-cta-btn btn-gold">Choose Light clothes</a>
+              </div>
+
+              <!-- KPI 3 (Duvets - Clean Downward Aligned Rows) -->
+              <div class="kpi-card" id="kpi-tier-duvets">
+                <div class="kpi-header">
+                  <h3 class="kpi-tier-name">Duvets</h3>
+                  <p class="kpi-tier-sub">Different prices for every size</p>
+                </div>
+                
+                <div class="duvet-price-list">
+                  <div class="duvet-price-row">
+                    <span class="duvet-size">4 × 6 Size</span>
+                    <span class="duvet-price">KES 400</span>
+                  </div>
+                  <div class="duvet-price-row">
+                    <span class="duvet-size">5 × 6 Size</span>
+                    <span class="duvet-price">KES 450</span>
+                  </div>
+                  <div class="duvet-price-row">
+                    <span class="duvet-size">6 × 6 Size</span>
+                    <span class="duvet-price">KES 500</span>
+                  </div>
+                </div>
+
+                <div class="kpi-benefits">
+                  <div class="kpi-benefit-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Maximum of 500 KES only
+                  </div>
+                  <div class="kpi-benefit-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Best prices in town
+                  </div>
+                  <div class="kpi-benefit-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Deep cleaning
+                  </div>
+                </div>
+                <a href="#home" class="kpi-cta-btn btn-outline">Choose Duvets</a>
+              </div>
+
+              <!-- KPI 4 -->
+              <div class="kpi-card" id="kpi-tier-comforter">
+                <div class="kpi-header">
+                  <h3 class="kpi-tier-name">Heavy clothes, items & shoes</h3>
+                  <p class="kpi-tier-sub">Jackets, Towels, curtains & sheers, shoes</p>
+                </div>
+                <div class="kpi-price-display">
+                  <span class="kpi-currency">KES</span>
+                  <span class="kpi-amount">100</span>
+                  <span class="kpi-unit">/item (pair for shoes)</span>
+                </div>
+                <div class="kpi-benefits">
+                  <div class="kpi-benefit-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Deep cleaning
+                  </div>
+                  <div class="kpi-benefit-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Fabric care
+                  </div>
+                  <div class="kpi-benefit-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Best prices in town
+                  </div>
+                </div>
+                <a href="#home" class="kpi-cta-btn btn-outline">Choose Heavy clothes</a>
+              </div>
+
+              <!-- KPI 5 -->
+              <div class="kpi-card" id="kpi-tier-mats">
+                <div class="kpi-header">
+                  <h3 class="kpi-tier-name">Floor Mats</h3>
+                  <p class="kpi-tier-sub">Floor mats, carpets</p>
+                </div>
+                <div class="kpi-price-display">
+                  <span class="kpi-currency">KES</span>
+                  <span class="kpi-amount">400</span>
+                  <span class="kpi-unit">/item</span>
+                </div>
+                <div class="kpi-benefits">
+                  <div class="kpi-benefit-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Deep cleaning
+                  </div>
+                  <div class="kpi-benefit-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    All sizes
+                  </div>
+                  <div class="kpi-benefit-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Best prices in town
+                  </div>
+                </div>
+                <a href="#home" class="kpi-cta-btn btn-outline">Choose Floor Mats</a>
+              </div>
+
+              <!--kpi card 6-->
+              <div class="kpi-card" id="kpi-tier-mats">
+                <div class="kpi-header">
+                  <h3 class="kpi-tier-name">Complete Suits</h3>
+                  <p class="kpi-tier-sub">Trouser, shirt and Jacket</p>
+                </div>
+                <div class="kpi-price-display">
+                  <span class="kpi-currency">KES</span>
+                  <span class="kpi-amount">500</span>
+                  <span class="kpi-unit">/set</span>
+                </div>
+                <div class="kpi-benefits">
+                  <div class="kpi-benefit-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Dry cleaning
+                  </div>
+                  <div class="kpi-benefit-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Stain pre-treatment
+                  </div>
+                  <div class="kpi-benefit-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Steam pressing and ironing
+                  </div>
+                </div>
+                <a href="#home" class="kpi-cta-btn btn-outline">Choose suits</a>
+              </div>
+
+               <!--kpi card 6-->
+              <div class="kpi-card" id="kpi-tier-mats">
+                <div class="kpi-header">
+                  <h3 class="kpi-tier-name">Blankets</h3>
+                  <p class="kpi-tier-sub">Light blankets and fleece blankets</p>
+                </div>
+                <div class="kpi-price-display">
+                  <span class="kpi-currency">KES</span>
+                  <span class="kpi-amount">300</span>
+                  <span class="kpi-unit">/item</span>
+                </div>
+                <div class="kpi-benefits">
+                  <div class="kpi-benefit-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Wash, dry and fold
+                  </div>
+                  <div class="kpi-benefit-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Deep cleaning
+                  </div>
+                  <div class="kpi-benefit-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Best prices in town
+                  </div>
+                </div>
+                <a href="#home" class="kpi-cta-btn btn-outline">Choose Blankets</a>
+              </div>
+
+
+            </div>
+
+           
+        </section>
+
+        <!-- Location & Operating Hours Section -->
+        <section class="section section-white" id="location-hours-section">
+          <div class="container">
+            <div class="section-header">
+              <span class="section-badge">Visit or Book</span>
+              <h2 class="section-title">Location & Operating Hours</h2>
+              <p class="section-description">
+                Convenient drop-off counter and direct doorstep pickup coverage across Rongai and all surrounding areas.
+              </p>
+            </div>
+
+            <div class="location-grid">
+              
+              <!-- Info & Hours -->
+              <div class="location-info-card" id="location-info-card">
+                
+                <!-- Address -->
+                <div class="info-item">
+                  <div class="info-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </div>
+                  <div class="info-details">
+                    <h4>Ongata Rongai Kware</h4>
+                    <p>Opposite National Bank<br/></p>
+                  </div>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="info-item">
+                  <div class="info-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </div>
+                  <div class="info-details">
+                    <h4>Direct Contact</h4>
+                    <p>Phone: <strong>(+254) 752275716 or 710775709</strong><br />Email: <strong>hoveklaundryservices@gmail.com</strong></p>
+                  </div>
+                </div>
+
+                <!-- Hours Table -->
+                <div class="info-item">
+                  <div class="info-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </div>
+                  <div class="info-details" style="width: 100%;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
+                      <h4>Operating Hours</h4>
+                      <span class="hours-status-badge">
+                        <span class="hours-status-dot"></span>
+                        Open Today
+                      </span>
+                    </div>
+
+                    <table class="hours-table">
+                      <tbody>
+                        <tr>
+                          <td>Monday – Friday</td>
+                          <td>7:00 AM – 7:00 PM</td>
+                        </tr>
+                        <tr>
+                          <td>Saturday</td>
+                          <td>7:00 AM – 7:00 PM</td>
+                        </tr>
+                        <tr>
+                          <td>Sunday</td>
+                          <td>8:00 AM – 4:00 PM</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- Service Radius Note -->
+                <div style="background-color:var(--light-blue-tint); padding:12px 16px; border-radius:var(--radius-md); border:1px solid var(--blue-border); font-size:0.85rem; color:var(--dark-navy);">
+                  <strong>🚀 Free Pickup Radius:</strong> We serve all locations in and around Rongai. Same day collection for requests made before 5:00 PM.
+                </div>
+
+              </div>
+
+              <!-- Google Maps Placeholder Iframe -->
+              <div class="map-wrapper" id="google-maps-container">
+                <iframe
+                  title="HovekLaundry Location Map"
+                  class="map-iframe"
+                  src="https://maps.google.com/maps?q=Ongata+Rongai+Kware+National+Bank&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  loading="lazy"
+                  allowfullscreen
+                ></iframe>
+                <div class="map-overlay-badge">
+                  <span class="map-tag">📍 We are opposite National bank Ongata Rongai Branch</span>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" style="font-size:0.85rem; color:var(--primary-blue); font-weight:700;">
+                    Get Directions →
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+      </section>
+
+      <!-- VIEW 2: HOW IT WORKS (#how-it-works) -->
+      <section class="spa-view" id="view-how-it-works">
+        
+        <div class="container section">
+          
+          <div class="section-header">
+            <span class="section-badge">Simple 4-Step Process</span>
+            <h2 class="section-title">How Hovek Laundry Works</h2>
+            <p class="section-description">
+              Getting crisp, fresh laundry has never been easier. We handle the pickup, washing, drying, folding, and delivery in 4 simple steps.
+            </p>
+          </div>
+
+          <!-- Step by Step Timeline -->
+          <div class="timeline-steps">
+            
+            <!-- Step 1 -->
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <div class="step-icon-wrapper">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                  <line x1="12" y1="18" x2="12.01" y2="18"/>
+                </svg>
+              </div>
+              <h3 class="step-title">Request for pickup or drop clothes</h3>
+              <p class="step-desc">
+                Request for pickup on any of our numbers provided or through the forms or social media pages.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <div class="step-icon-wrapper">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="1" y="3" width="15" height="13"/>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                  <circle cx="5.5" cy="18.5" r="2.5"/>
+                  <circle cx="18.5" cy="18.5" r="2.5"/>
+                </svg>
+              </div>
+              <h3 class="step-title">We Pickup at Your Door</h3>
+              <p class="step-desc">
+                Our team arrives at the agreed location with custom laundry bags and identification tags for garment security.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <div class="step-icon-wrapper">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                </svg>
+              </div>
+              <h3 class="step-title">Eco-Friendly Cleaning</h3>
+              <p class="step-desc">
+                Garments are sorted by fabric & color, pre-treated for stains, and washed using eco-friendly, hypoallergenic detergents.
+              </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <div class="step-icon-wrapper">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+              </div>
+              <h3 class="step-title">Clean, Crisp Delivery</h3>
+              <p class="step-desc">
+                Delivered right back to your door within 24 to 48 hours — fresh, perfectly folded, and ready to wear.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Secondary Lead Form in How It Works -->
+          <div class="secondary-form-section" id="secondary-lead-section">
+            <div class="secondary-form-grid">
+              
+              <div class="sec-form-content">
+                <h3>Ready to Experience Effortless Laundry?</h3>
+                <p>
+                  Leave your details here and we will reach out immediately to confirm your first doorstep pickup. New customers get KES100 off their first bag! <br> When you refer someone to Hovek you get 20% off your next wash.
+                </p>
+                <div class="sec-guarantees">
+                  <div class="sec-guarantee-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span>100% Satisfaction or Free Re-wash</span>
+                  </div>
+                  <div class="sec-guarantee-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span>Flexible Pickup all through the day</span>
+                  </div>
+                  <div class="sec-guarantee-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span>Zero Contract Commitment — Pay As You Go</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Secondary Form Card -->
+              <div class="lead-form-card" style="box-shadow: 0 15px 35px rgba(0,0,0,0.3);">
+                <div class="form-header">
+                  <h3 class="form-title">Schedule Pickup Now</h3>
+                  <p class="form-subtitle">We will contact you within 30 minutes.</p>
+                </div>
+
+                <form class="lead-form" id="secondary-lead-form" novalidate>
+                  <div class="form-group">
+                    <label class="form-label" for="sec-name">Full Name <span style="color:var(--error)">*</span></label>
+                    <input type="text" id="sec-name" name="name" class="form-input" placeholder="e.g. Hovek Laundry" required />
+                    <span class="form-error-msg" id="sec-name-error">Please enter your name.</span>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label" for="sec-phone">Phone <span style="color:var(--error)">*</span></label>
+                      <input type="tel" id="sec-phone" name="phone" class="form-input" placeholder="(+254) 700-000-000" required />
+                      <span class="form-error-msg" id="sec-phone-error">Valid phone required.</span>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label" for="sec-email">Email <span style="color:var(--error)">*</span></label>
+                      <input type="email" id="sec-email" name="email" class="form-input" placeholder="hovek@example.com" />
+                      <span class="form-error-msg" id="sec-email-error">Valid email required.</span>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="sec-service-select">Service Needed <span style="color:var(--error)">*</span></label>
+                    <select id="sec-service-select" name="service" class="form-select" required>
+                      <option value="" disabled selected>Select service...</option>
+                      <option value="wash-and-fold">Light clothes 70KES per kg</option>
+                      <option value="dry-cleaning">Duvets (500KES max)</option>
+                      <option value="ironing-pressing">Basket 700KES</option>
+                      <option value="bedding-comforters">Shoes 100KES</option>
+                      <option value="multiple-items">Multiple items</option>
+                      <option value="bulk-commercial">Business, Organizations etc</option>
+                    </select>
+                    <span class="form-error-msg" id="sec-service-select-error">Select a service.</span>
+                  </div>
+
+                  <button type="submit" class="btn-submit" id="btn-submit-sec">
+                    <span class="spinner" style="display:none;" aria-hidden="true"></span>
+                    <span class="btn-text">Get Started Today</span>
+                  </button>
+                </form>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- FAQ Accordion Section -->
+          <div class="faq-section" id="faq-accordion-container">
+            <div class="section-header" style="margin-bottom: 28px;">
+              <span class="section-badge">Common Inquiries</span>
+              <h3 class="section-title" style="font-size: 1.85rem;">Frequently Asked Questions</h3>
+            </div>
+
+            <div class="faq-list">
+              <!-- FAQ 1 -->
+              <div class="faq-item active">
+                <button class="faq-question-btn" type="button">
+                  <span>What is your standard turnaround time for laundry & dry cleaning?</span>
+                  <svg class="faq-icon-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">
+                  Our standard turnaround for Wash & Fold and Steam Pressing is <strong>24 hours</strong>. For delicate Dry Cleaning items or heavy comforters, it is typically <strong>24 to 48 hours</strong>. Same-day express service is available for orders picked up before 10:00 AM.
+                </div>
+              </div>
+
+              <!-- FAQ 2 -->
+              <div class="faq-item">
+                <button class="faq-question-btn" type="button">
+                  <span>How do you handle delicate, silk, or wool garments?</span>
+                  <svg class="faq-icon-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">
+                  Every item is tagged and inspected. Delicate silks and wools undergo custom gentle solvent cycles without harsh agitation or extreme heat, preserving texture and color vibrance.
+                </div>
+              </div>
+
+              <!-- FAQ 3 -->
+              <div class="faq-item">
+                <button class="faq-question-btn" type="button">
+                  <span>Do I need to be home during pickup and delivery?</span>
+                  <svg class="faq-icon-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">
+                  No! Many of our busy customers specify contactless pickup (e.g., leaving the bag at the porch, with the doorman, or a neighbor). We inform you once the pickup is done.
+                </div>
+              </div>
+
+              <!-- FAQ 4 -->
+              <div class="faq-item">
+                <button class="faq-question-btn" type="button">
+                  <span>What detergents and cleaning solutions do you use?</span>
+                  <svg class="faq-icon-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">
+                  We constantly do research to make sure we are using the best soaps and detergents in the Kenyan market. You can also request fragrance-free soaps or specific soaps if you have sensitive skin.
+                </div>
+              </div>
+              <!-- FAQ 5-->
+              <div class="faq-item active">
+                <button class="faq-question-btn" type="button">
+                  <span>Are payments done before or after delivery ?</span>
+                  <svg class="faq-icon-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">
+                  Payments can be done anytime after pickups but can also be done on delivery.
+                </div>
+              </div>
+
+              <!--FAQ 6-->
+                <div class="faq-item active">
+                <button class="faq-question-btn" type="button">
+                  <span>Incase of emergencies and am not available for deliveries, how do you go about it ?</span>
+                  <svg class="faq-icon-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">
+                  Once the laundry is done and the customer is not available for delivery, the customer should make payments when notified and we will hold the delivery untill you are available
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- VIEW 3: ABOUT US (#about-us) -->
+      <section class="spa-view" id="view-about-us">
+        
+        <div class="container section">
+          
+          <!-- About Hero Story -->
+          <div class="about-hero-grid">
+            <div class="about-text">
+              <span class="section-badge">Who We Are & Mission</span>
+              <h3>Offering the Best Services in Town</h3>
+              <p>
+                Hovek Laundry and Dry Cleaning Services is a professional laundry and garment-care service provider committed to delivering reliable, convenient, high-quality laundry and dry cleaning solutions to individuals, households, businesses, institutions, and any other organization.
+              </p>
+              <p>
+                Founded with a simple mission: to give busy professionals, active families, and local businesses effortless, premium laundry care at affordable prices.
+              </p>
+              <div style="display:flex; gap:16px; margin-top:24px;">
+                <a href="#home" class="header-cta-btn" style="padding:12px 24px; font-size:1rem;">
+                  Schedule Your First Pickup
+                </a>
+              </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-number">50k+</div>
+                <div class="stat-label">Garments Cleaned</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">4.9★</div>
+                <div class="stat-label">Customer Rating</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Happy Households</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Affordable Prices</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quality Values Grid -->
+          <div class="section-header">
+            <span class="section-badge">Our Core Promises</span>
+            <h3 class="section-title">The Hovek Quality Standard</h3>
+            <p class="section-description">
+              Every garment that enters our facility is inspected, tracked, and treated with artisan attention to detail.
+            </p>
+          </div>
+
+          <div class="values-grid">
+            
+            <div class="value-card">
+              <div class="value-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h4 class="value-title">Fabric Safety Guarantee</h4>
+              <p class="value-desc">
+                We inspect every zipper, button, and seam. If any fabric is ever damaged or compromised, our comprehensive coverage will replace or repair it immediately.
+              </p>
+            </div>
+
+            <div class="value-card">
+              <div class="value-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+              </div>
+              <h4 class="value-title">Zero Toxic Solvents</h4>
+              <p class="value-desc">
+                We strictly ban carcinogenic PERC solvent and optical brighteners. Our closed-loop wet-cleaning process preserves fibers and protects local waterways.
+              </p>
+            </div>
+
+            <div class="value-card">
+              <div class="value-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <h4 class="value-title">Punctual 24h Turnaround</h4>
+              <p class="value-desc">
+                We value your time. We stick to guaranteed 60-minute pickup and delivery windows, so you never have to wait around all day.
+              </p>
+            </div>
+
+            <div class="value-card">
+              <div class="value-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              </div>
+              <h4 class="value-title">Sanitized Packaging</h4>
+              <p class="value-desc">
+                Garments are sealed in dust-proof packaging to ensure they remain pristine from our presses to your closet.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Direct Facility Contact Block -->
+          <div style="background-color:#ffffff; border:1px solid var(--blue-border); border-radius:var(--radius-lg); padding:36px 32px; box-shadow:var(--shadow-md); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;">
+            <div>
+              <h4 style="font-size:1.35rem; font-weight:800; color:var(--dark-navy); margin-bottom:6px;">Have a Question or Special Fabric Request?</h4>
+              <p style="color:var(--text-muted); font-size:0.95rem;">Our master cleaners are available 7 days a week to answer fabric care inquiries.</p>
+            </div>
+            <div style="display:flex; gap:12px; align-items:center;">
+              <a href="tel:+254752275716" class="header-cta-btn" style="background-color:var(--primary-blue); color:#ffffff;">
+                📞 Call (+254) 752275716
+              </a>
+              <a href="#home" class="header-cta-btn">
+                Book Online
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- Floating WhatsApp Attention Button -->
+    <a
+      href="https://wa.me/254752275716?text=Hello%20HovekLaundry,%20I%20would%20like%20to%20schedule%20a%20pickup"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="whatsapp-float-btn"
+      id="whatsapp-float-btn"
+      aria-label="Chat with HovekLaundry on WhatsApp"
+    >
+      <svg class="whatsapp-icon-svg" viewBox="0 0 24 24">
+        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.19 8.19 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.3z"/>
+      </svg>
+      <div class="whatsapp-tooltip">
+        <span style="font-size:0.92rem; font-weight:800;">Chat on WhatsApp</span>
+        <span class="whatsapp-tooltip-sub">Instant Pickup Support</span>
+      </div>
+    </a>
+
+    <!-- Persistent Footer -->
+    <footer class="site-footer" id="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          
+          <!-- Brand Column -->
+          <div class="footer-brand">
+            <a href="#home" class="brand-logo" style="color:#ffffff;">
+              <div class="logo-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="3" ry="3"/>
+                  <circle cx="12" cy="13" r="5"/>
+                  <circle cx="12" cy="13" r="2"/>
+                </svg>
+              </div>
+              <div class="brand-text">
+                <span class="brand-name" style="color:#ffffff;">Hovek<span style="color:var(--accent-gold);">Laundry</span></span>
+                <span class="brand-tagline" style="color:#94a3b8;">Laundry & Dry Cleaning</span>
+              </div>
+            </a>
+            <p>
+              Premium doorstep laundry, garment dry-cleaning, and industrial steam pressing powered by 100% eco-friendly and non-toxic washing technologies.
+            </p>
+            <div class="social-links">
+              <a href="https://facebook.com/HOVEKLaundryServices" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+              <a href="https://instagram.com/hoveklaundry" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="https://tiktok.com/@HovekLaundry" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="TikTok">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="footer-heading">Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="#home" class="footer-link footer-nav-link">Home Screen</a></li>
+              <li><a href="#how-it-works" class="footer-link footer-nav-link">How It Works</a></li>
+              <li><a href="#about-us" class="footer-link footer-nav-link">About Our Facility</a></li>
+              <li><a href="#home" class="footer-link">Schedule a Pickup</a></li>
+            </ul>
+          </div>
+
+          <!-- Services Links -->
+          <div>
+            <h4 class="footer-heading">Services</h4>
+            <ul class="footer-links">
+              <li><a href="#home" class="footer-link">Light clothes 70KES per kg</a></li>
+              <li><a href="#home" class="footer-link">Basket 700KES</a></li>
+              <li><a href="#home" class="footer-link">Duvets (500KES max)</a></li>
+              <li><a href="#home" class="footer-link">Shoes 100KES per pair</a></li>
+              <li><a href="#home" class="footer-link">Curtains/sheers 100KES</a></li>
+              <li><a href="#home" class="footer-link">Businesses, Organizations etc</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact & Coverage -->
+          <div>
+            <h4 class="footer-heading">Direct Contact</h4>
+            <div class="footer-contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Ongata Rongai Kware opposite National Bank</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>(+254) 752-275-716</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>hoveklaundryservices@gmail.com</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="footer-bottom">
+          <div>© 2026 HovekLaundry Laundry & Dry Cleaning. All rights reserved.</div>
+          <div style="display:flex; gap:16px;">
+            <span>Privacy Policy</span>
+            <span>Terms of Service</span>
+            <span>Garment Care Guarantee</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Vanilla JS Application Entry Point -->
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
