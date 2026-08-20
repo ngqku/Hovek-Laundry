@@ -8,26 +8,12 @@
   'use strict';
 
   // --- Configuration & Constants ---
-  const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz_SAMPLE_APP_SCRIPT_URL_PLACEHOLDER/exec';
-  const WHATSAPP_PHONE_NUMBER = '15552345678'; // International format without +
+  // NOTE: Google Apps Script URL - Replace YOUR_SCRIPT_ID with actual ID when ready to integrate
+  // const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+  
+  const WHATSAPP_PHONE_NUMBER = '254752275716'; // Kenya phone number in international format
   const DEFAULT_ROUTE = 'home';
   const VALID_ROUTES = ['home', 'how-it-works', 'about-us'];
-
-  // Pricing Matrix for Interactive Estimator
-  const PRICING_RATES = {
-    washFold: 2.50,    // per kg
-    suits: 5.00,       // per suit
-    ironing: 2.00,     // per garment
-    comforters: 18.00  // per set
-  };
-
-  // State for Calculator
-  const calcState = {
-    washFold: 5,   // default 5kg
-    suits: 1,      // default 1 suit
-    ironing: 3,    // default 3 shirts
-    comforters: 0  // default 0
-  };
 
   // --- DOM Elements ---
   const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link, .footer-nav-link');
@@ -97,7 +83,7 @@
 
     const iconSvg = type === 'success'
       ? `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`
-      : `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`;
+      : `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>`;
 
     toast.innerHTML = `
       <div class="toast-icon">${iconSvg}</div>
@@ -163,25 +149,25 @@
     formElement.querySelectorAll('.form-error-msg').forEach((el) => (el.style.display = 'none'));
 
     // Validate Name
-    if (!nameInput.value.trim()) {
-      nameInput.classList.add('error');
-      const err = formElement.querySelector('#' + nameInput.id + '-error');
+    if (!nameInput || !nameInput.value.trim()) {
+      if (nameInput) nameInput.classList.add('error');
+      const err = formElement.querySelector('#' + (nameInput ? nameInput.id : '') + '-error');
       if (err) err.style.display = 'block';
       isValid = false;
     }
 
     // Validate Phone
-    if (!phoneInput.value.trim() || !validatePhone(phoneInput.value)) {
-      phoneInput.classList.add('error');
-      const err = formElement.querySelector('#' + phoneInput.id + '-error');
+    if (!phoneInput || !phoneInput.value.trim() || !validatePhone(phoneInput.value)) {
+      if (phoneInput) phoneInput.classList.add('error');
+      const err = formElement.querySelector('#' + (phoneInput ? phoneInput.id : '') + '-error');
       if (err) err.style.display = 'block';
       isValid = false;
     }
 
     // Validate Email
-    if (!emailInput.value.trim() || !validateEmail(emailInput.value)) {
-      emailInput.classList.add('error');
-      const err = formElement.querySelector('#' + emailInput.id + '-error');
+    if (!emailInput || !emailInput.value.trim() || !validateEmail(emailInput.value)) {
+      if (emailInput) emailInput.classList.add('error');
+      const err = formElement.querySelector('#' + (emailInput ? emailInput.id : '') + '-error');
       if (err) err.style.display = 'block';
       isValid = false;
     }
@@ -223,26 +209,25 @@
       existingBookings.unshift(payload);
       localStorage.setItem('hovek_bookings', JSON.stringify(existingBookings));
 
-      // Attempt fetch to Google Apps Script Web App Endpoint
-      let responseSuccess = true;
-      try {
-        // If placeholder URL is in place, do a short network simulation
-        if (GOOGLE_APPS_SCRIPT_URL.includes('SAMPLE_APP_SCRIPT_URL')) {
-          await new Promise((resolve) => setTimeout(resolve, 800));
-        } else {
-          const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
-            method: 'POST',
-            mode: 'no-cors', // standard for Google Apps Script Web Apps
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
-          });
-        }
-      } catch (networkErr) {
-        console.warn('Google Sheets endpoint notice:', networkErr);
-        // Fallback gracefully since local simulation stored the lead
-      }
+      // ========== GOOGLE SHEETS INTEGRATION ==========
+      // Uncomment this section and add your Google Apps Script URL when ready
+      // 
+      // try {
+      //   const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+      //   const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+      //     method: 'POST',
+      //     mode: 'no-cors', // required for Google Apps Script Web Apps
+      //     headers: {
+      //       'Content-Type': 'application/json'
+      //     },
+      //     body: JSON.stringify(payload)
+      //   });
+      //   console.log('Form submitted to Google Sheets successfully');
+      // } catch (networkErr) {
+      //   console.warn('Google Sheets integration notice:', networkErr);
+      //   // Data is still saved locally, so this is not critical
+      // }
+      // ===============================================
 
       // Success Feedback
       formElement.reset();
@@ -263,23 +248,23 @@
     }
   }
 
- 
-
   // --- Quick Service Selector Buttons ---
   function setupServiceCards() {
     const serviceBtns = document.querySelectorAll('.service-select-btn');
     serviceBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
         const serviceValue = btn.getAttribute('data-service');
         window.location.hash = '#home';
         setTimeout(() => {
           const formCard = document.getElementById('lead-form-card');
           const serviceSelect = document.getElementById('primary-service-select');
-          if (formCard) {
+          if (formCard && formCard.scrollIntoView) {
             formCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
           if (serviceSelect && serviceValue) {
             serviceSelect.value = serviceValue;
+            serviceSelect.dispatchEvent(new Event('change', { bubbles: true }));
           }
         }, 100);
       });
@@ -292,7 +277,8 @@
     faqItems.forEach((item) => {
       const btn = item.querySelector('.faq-question-btn');
       if (btn) {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
           const isActive = item.classList.contains('active');
           // Close others
           faqItems.forEach((other) => other.classList.remove('active'));
@@ -309,8 +295,10 @@
     const waBtn = document.getElementById('whatsapp-float-btn');
     if (waBtn) {
       waBtn.addEventListener('click', (e) => {
+        e.preventDefault();
         const message = encodeURIComponent('Hello Hovek! I would like to schedule a laundry & dry cleaning pickup.');
-        waBtn.href = `https://wa.me/${752275716 }?text=${message}`;
+        const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${message}`;
+        window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
       });
     }
   }
@@ -318,7 +306,8 @@
   // --- Mobile Drawer Menu ---
   function setupMobileMenu() {
     if (mobileToggle && mobileDrawer) {
-      mobileToggle.addEventListener('click', () => {
+      mobileToggle.addEventListener('click', (e) => {
+        e.preventDefault();
         const isOpen = mobileDrawer.classList.contains('open');
         if (isOpen) {
           mobileDrawer.classList.remove('open');
@@ -331,10 +320,23 @@
 
       // Close when clicking outside
       document.addEventListener('click', (e) => {
-        if (!mobileDrawer.contains(e.target) && !mobileToggle.contains(e.target)) {
+        if (mobileDrawer && mobileToggle && !mobileDrawer.contains(e.target) && !mobileToggle.contains(e.target)) {
           mobileDrawer.classList.remove('open');
           mobileToggle.setAttribute('aria-expanded', 'false');
         }
+      });
+
+      // Close mobile drawer when a link is clicked
+      const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+      mobileLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          if (mobileDrawer) {
+            mobileDrawer.classList.remove('open');
+            if (mobileToggle) {
+              mobileToggle.setAttribute('aria-expanded', 'false');
+            }
+          }
+        });
       });
     }
   }
@@ -357,7 +359,6 @@
     }
 
     // Setup Components
-    setupCalculator();
     setupServiceCards();
     setupFaqAccordion();
     setupWhatsAppButton();
