@@ -8,7 +8,6 @@
   'use strict';
 
   // --- Configuration & Constants ---
-  // NOTE: Google Apps Script URL - Replace YOUR_SCRIPT_ID with actual ID when ready to integrate
   // const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
   
   const WHATSAPP_PHONE_NUMBER = '254752275716'; // Kenya phone number in international format
@@ -210,7 +209,6 @@
       localStorage.setItem('hovek_bookings', JSON.stringify(existingBookings));
 
       // ========== GOOGLE SHEETS INTEGRATION ==========
-      // Uncomment this section and add your Google Apps Script URL when ready
       // 
       // try {
       //   const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
