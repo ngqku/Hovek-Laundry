@@ -223,7 +223,7 @@
       //   console.log('Form submitted to Google Sheets successfully');
       // } catch (networkErr) {
       //   console.warn('Google Sheets integration notice:', networkErr);
-      //   // Data is still saved locally, so this is not critical
+      //   
       // }
       // ===============================================
 
