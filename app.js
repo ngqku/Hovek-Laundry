@@ -164,7 +164,8 @@
     }
 
     // Validate Email
-    if (!emailInput || !emailInput.value.trim() || !validateEmail(emailInput.value)) {
+    const emailValue = emailInput.value.trim();
+    if (emailvalue !== '' && !validateEmail(emailInput.value)) {
       if (emailInput) emailInput.classList.add('error');
       const err = formElement.querySelector('#' + (emailInput ? emailInput.id : '') + '-error');
       if (err) err.style.display = 'block';
