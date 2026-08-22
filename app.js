@@ -232,7 +232,7 @@
       formElement.reset();
       showToast(
         'Pickup Scheduled Successfully!',
-        `Thank you ${payload.name}! Ref #${bookingRef}. Our driver will contact you at ${payload.phone} before arrival.`,
+        `Thank you ${payload.name}! Ref #${bookingRef}. We will contact you at ${payload.phone} before arrival.`,
         'success',
         6500
       );
