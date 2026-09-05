@@ -8,7 +8,7 @@
   'use strict';
 
   // --- Configuration & Constants ---
-  // const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+  const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbye1mOlumkck30JCoWvcXLCFo0TMzDP1BBkPpT-FZHLF3Xy9jzjiRKaOcs1BxVr7307/exec';
   
   const WHATSAPP_PHONE_NUMBER = '254752275716'; // Kenya phone number in international format
   const DEFAULT_ROUTE = 'home';
@@ -210,22 +210,22 @@
       localStorage.setItem('hovek_bookings', JSON.stringify(existingBookings));
 
       // ========== GOOGLE SHEETS INTEGRATION ==========
-      // 
-      // try {
-      //   const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
-      //   const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
-      //     method: 'POST',
-      //     mode: 'no-cors', // required for Google Apps Script Web Apps
-      //     headers: {
-      //       'Content-Type': 'application/json'
-      //     },
-      //     body: JSON.stringify(payload)
-      //   });
-      //   console.log('Form submitted to Google Sheets successfully');
-      // } catch (networkErr) {
-      //   console.warn('Google Sheets integration notice:', networkErr);
-      //   
-      // }
+       
+       try {
+         const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbye1mOlumkck30JCoWvcXLCFo0TMzDP1BBkPpT-FZHLF3Xy9jzjiRKaOcs1BxVr7307/exec';
+         const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+           method: 'POST',
+           mode: 'no-cors', // required for Google Apps Script Web Apps
+           headers: {
+             'Content-Type': 'text/plain;charset=utf-8'
+           },
+           body: JSON.stringify(payload)
+         });
+         console.log('Form submitted to Google Sheets successfully');
+       } catch (networkErr) {
+         console.warn('Google Sheets integration notice:', networkErr);
+         
+       }
       // ===============================================
 
       // Success Feedback
