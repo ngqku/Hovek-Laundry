@@ -16,6 +16,69 @@
 
     <!-- Global CSS Stylesheet -->
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- JSON-LD Review & Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LaundryOrDryCleaning",
+      "name": "Hovek Laundry & Dry Cleaning",
+      "image": "https://yourdomain.com/images/logo.jpeg",
+      "@id": "https://hoveklaundry.co.ke/#business",
+      "url": "https://hoveklaundry.co.ke/",
+      "telephone": "+254752275716",
+      "priceRange": "",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kwaree",
+        "addressLocality": "Ongata Rongai",
+        "addressRegion": "Nairobi",
+        "addressCountry": "KE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -1.39,
+        "longitude": 36.76
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "bestRating": "5",
+        "worstRating": "4"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Kelvin. "
+          },
+          "datePublished": "2026-09-06",
+          "reviewBody": "Professional, affordable and reliable Laundry provider.If you are lookimg for one try them..",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "dizzy."
+          },
+          "datePublished": "2026-09-06",
+          "reviewBody": "Great wash and fold service in Ongata Rongai. Got my clothes cleaned fast",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "4",
+            "bestRating": "4"
+          }
+        }
+      ]
+    }
+    </script>
+
   </head>
   <body>
     <!-- Toast Notification Container -->
