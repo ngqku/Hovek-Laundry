@@ -973,7 +973,7 @@ ul, ol {
   box-shadow: var(--shadow-gold);
 }
 /*more*/
-.duvet-price-list {
+.multiple-cat-list {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -985,19 +985,19 @@ ul, ol {
   border-radius: var(--radius-md, 8px);
 }
 
-.duvet-price-row {
+.multiple-cat-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 0.95rem;
 }
 
-.duvet-size {
+.multiple-cat {
   font-weight: 600;
   color: var(--dark-navy, #1e293b);
 }
 
-.duvet-price {
+.multiple-cat-price {
   font-weight: 700;
   color: var(--primary-blue, #2563eb);
 }
